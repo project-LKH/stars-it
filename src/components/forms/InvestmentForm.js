@@ -24,12 +24,12 @@ const InvestmentForm = () => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
+     
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     alert("Thank you for your investment inquiry! We'll contact you soon to discuss opportunities.")
 
-    // Reset form
+     
     setFormData({
       name: "",
       email: "",

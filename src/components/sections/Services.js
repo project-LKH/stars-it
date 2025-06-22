@@ -51,7 +51,7 @@ const Services = () => {
   ];
 
   useEffect(() => {
-    // Optional: Animation or logic for services loading
+     
   }, []);
 
   return (

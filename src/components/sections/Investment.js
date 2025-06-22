@@ -14,7 +14,7 @@ const Investment = () => {
   ];
 
   useEffect(() => {
-    // Any animation-related logic removed
+     
   }, []);
 
   return (

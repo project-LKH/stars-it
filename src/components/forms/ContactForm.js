@@ -26,12 +26,12 @@ const ContactForm = () => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
+     
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     alert("Thank you for your inquiry! We'll get back to you within 24 hours.")
 
-    // Reset form
+     
     setFormData({
       firstName: "",
       lastName: "",

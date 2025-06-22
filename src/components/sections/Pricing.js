@@ -24,7 +24,7 @@ const Pricing = () => {
       ),
       title: "Call Out Fee",
       description: "One-time fee for on-site visits",
-      price: 75,
+      price: 400,
       period: "Per site visit",
       color: "blue",
       features: [
@@ -51,7 +51,7 @@ const Pricing = () => {
       ),
       title: "Hourly Rate",
       description: "Professional service rate",
-      price: 95,
+      price: 500,
       period: "Per hour",
       color: "green",
       features: [
@@ -78,7 +78,7 @@ const Pricing = () => {
               </div>
               <h3 className="pricing-title">{plan.title}</h3>
               <p className="pricing-description">{plan.description}</p>
-              <div className={`pricing-price`}>${plan.price}</div>
+              <div className={`pricing-price`}>R{plan.price}</div>
               <p className="pricing-period">{plan.period}</p>
               <ul className="pricing-features">
                 {plan.features.map((feature, featureIndex) => (

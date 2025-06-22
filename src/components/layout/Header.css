@@ -7,7 +7,8 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #374151;
   z-index: 1000;
-  transition: background 0.3s ease, border-bottom 0.3s ease; /* Apply transition on background and border */
+  transition: background 0.3s ease, border-bottom 0.3s ease;
+  padding: 0 1rem;
 }
 
 .header-scrolled {
@@ -39,7 +40,7 @@
 }
 
 .nav {
-  display: none;
+  display: flex;
   gap: 2rem;
 }
 
@@ -72,16 +73,33 @@
   padding: 0.5rem;
 }
 
+/* Mobile Menu Styles */
 .mobile-menu {
-  z-index: 1001; /* Ensure it’s on top of the header */
+  z-index: 1001;
   padding: 1rem 0;
   border-top: 1px solid #374151;
+  position: absolute;
+  top: 4rem; /* Position it below the header */
+  left: 0;
+  right: 0;
+  background: rgba(3, 7, 18, 0.95); /* Make sure background is visible */
+  transform: translateY(-20px);  /* Start off slightly off-screen */
+  opacity: 0;  /* Hidden initially */
+  pointer-events: none;  /* Prevent clicks while hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  transform: translateY(0);  /* Move to normal position */
+  pointer-events: all;  /* Allow clicks when shown */
 }
 
 .mobile-nav {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 0 1rem;
 }
 
 .mobile-nav-link {
@@ -104,10 +122,22 @@
   .nav {
     display: flex; /* Show nav on large screens */
   }
+
+  .mobile-menu {
+    display: none; /* Hide mobile menu on large screens */
+  }
+
+  .mobile-menu-btn {
+    display: none; /* Hide the mobile menu button on large screens */
+  }
 }
 
 @media (max-width: 768px) {
   .md-hidden {
     display: block; /* Show mobile menu button on small screens */
+  }
+
+  .nav {
+    display: none; /* Hide desktop nav on small screens */
   }
 }

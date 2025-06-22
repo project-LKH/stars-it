@@ -8,7 +8,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100); // Change this threshold if needed
+      setIsScrolled(window.scrollY > 100);  
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -19,12 +19,12 @@ const Header = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+      setIsMobileMenuOpen(false);  
     }
   };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen(!isMobileMenuOpen);  
   };
 
   return (
@@ -64,27 +64,26 @@ const Header = () => {
           </div>
         </div>
 
-        {isMobileMenuOpen && (
-          <div className="mobile-menu">
-            <nav className="mobile-nav">
-              <button onClick={() => scrollToSection("services")} className="mobile-nav-link">
-                Services
-              </button>
-              <button onClick={() => scrollToSection("pricing")} className="mobile-nav-link">
-                Pricing
-              </button>
-              <button onClick={() => scrollToSection("investment")} className="mobile-nav-link">
-                Investment
-              </button>
-              <button onClick={() => scrollToSection("contact")} className="mobile-nav-link">
-                Contact
-              </button>
-              <Button onClick={() => scrollToSection("contact")} className="mt-4">
-                Get Quote
-              </Button>
-            </nav>
-          </div>
-        )}
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
+          <nav className="mobile-nav">
+            <button onClick={() => scrollToSection("services")} className="mobile-nav-link">
+              Services
+            </button>
+            <button onClick={() => scrollToSection("pricing")} className="mobile-nav-link">
+              Pricing
+            </button>
+            <button onClick={() => scrollToSection("investment")} className="mobile-nav-link">
+              Investment
+            </button>
+            <button onClick={() => scrollToSection("contact")} className="mobile-nav-link">
+              Contact
+            </button>
+            <Button onClick={() => scrollToSection("contact")} className="mt-4">
+              Get Quote
+            </Button>
+          </nav>
+        </div>
       </div>
     </header>
   );

@@ -19,7 +19,7 @@ const Contact = () => {
         </svg>
       ),
       title: "Phone",
-      value: "(555) 123-4567",
+      value: "076 909 2178",
     },
     {
       icon: (
@@ -33,7 +33,7 @@ const Contact = () => {
         </svg>
       ),
       title: "Email",
-      value: "support@starsit.com",
+      value: "chadley.starkey@gmail.com",
     },
     {
       icon: (
@@ -57,8 +57,6 @@ const Contact = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Animation logic can be added here if necessary
-
             observer.unobserve(entry.target);
           }
         });

@@ -7,7 +7,7 @@ const Hero = () => {
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    // Trigger fade-in animation after the component mounts
+     
     setFadeIn(true);
   }, []);
 
