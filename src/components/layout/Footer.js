@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="footer">
+    <footer className="footer" role="contentinfo" aria-label="Site footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
@@ -16,6 +16,7 @@ const Footer = () => {
           <div className="footer-text">
             <p>© {currentYear} Stars IT. All rights reserved.</p>
             <p className="footer-subtitle">Professional IT Services by Chadley Starkey</p>
+            <p className="footer-credit">Site created by Liam Henry</p>
           </div>
         </div>
       </div>
