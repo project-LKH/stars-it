@@ -1,0 +1,85 @@
+/* Investment Section Styling */
+#investment {
+  padding: 4rem 0;
+  background-color: #111827; /* Keeping the dark background */
+}
+
+/* Trending Icon Animation */
+.trending-icon {
+  color: #60a5fa; /* Original blue */
+  transform: scale(1); /* Set scale to 1 for visibility */
+  transition: transform 0.5s ease-out;
+}
+
+/* Investment Grid Layout */
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.investment-card {
+  opacity: 1; /* Ensure the card is visible */
+  transition: opacity 0.5s ease-out;
+  background-color: #1f2937; /* Dark background for cards */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #374151; /* Dark border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Style */
+.investment-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.users-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #60a5fa; /* Blue for icon */
+}
+
+/* List of Benefits */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #d1d5db; /* Light gray text */
+  line-height: 1.5;
+}
+
+.benefit-item .check-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #10b981; /* Green for check icon */
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+/* Investment Form Title & Description */
+.investment-form-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.investment-form-description {
+  color: #9ca3af; /* Soft gray */
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,130 @@
+/* Services Section */
+.section-alt {
+  background-color: rgba(17, 24, 39, 0.5);
+  padding: 6rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #9ca3af;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Styles */
+.service-card {
+  background: rgba(3, 7, 18, 0.75);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0; /* Initial opacity for animation */
+  transform: translateY(30px); /* Initial position for animation */
+}
+
+/* Service Card Hover Effect */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Icon */
+.service-icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Icon Color Based on Service Type */
+.service-icon-wrapper.blue .service-icon {
+  color: #60a5fa;
+}
+
+.service-icon-wrapper.green .service-icon {
+  color: #10b981;
+}
+
+.service-icon-wrapper.yellow .service-icon {
+  color: #f59e0b;
+}
+
+/* Service Icon */
+.service-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Service Title */
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+/* Service Description */
+.service-description {
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* Animation for Service Cards */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Trigger Animation when Cards Appear */
+.service-card {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}

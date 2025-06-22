@@ -1,0 +1,115 @@
+#pricing {
+  min-height: 100vh; /* Ensure there's enough height */
+  padding: 4rem 0;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  opacity: 1; /* Ensure cards are visible initially */
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure card fills the space */
+  animation: fadeIn 0.8s ease-in-out; /* Fade in animation */
+}
+
+/* Add a hover effect */
+.pricing-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon wrapper styles */
+.pricing-icon-wrapper {
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Icon styles */
+.pricing-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Color styles based on plan color */
+.pricing-icon-wrapper.blue .pricing-icon {
+  color: #60a5fa;
+}
+
+.pricing-icon-wrapper.green .pricing-icon {
+  color: #10b981;
+}
+
+/* Title styles */
+.pricing-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+/* Description styles */
+.pricing-description {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+/* Price styles */
+.pricing-price {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+/* Period styles */
+.pricing-period {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+/* Features list styles */
+.pricing-features {
+  list-style: none;
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+/* Feature item styles */
+.pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+}
+
+/* Checkmark icon styles */
+.check-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

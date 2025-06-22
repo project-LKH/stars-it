@@ -1,0 +1,74 @@
+/* Card component base styles */
+.card {
+  background-color: #1f2937; /* Dark background */
+  border: 1px solid #374151; /* Subtle border for better contrast */
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+  transform: translateY(-8px); /* Lift effect on hover */
+}
+
+/* Optional: You can add specific hover styles based on className if necessary */
+.card.text-center {
+  text-align: center;
+}
+
+/* Utility classes for adding spacing */
+.card .pricing-icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.card .pricing-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.card .pricing-description {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.card .pricing-price {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+.card .pricing-period {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.card .pricing-features {
+  list-style: none;
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+.card .pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+}
+
+.card .check-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #10b981; /* Green color for check icon */
+  flex-shrink: 0;
+}

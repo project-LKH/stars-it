@@ -1,0 +1,149 @@
+/* General Section Styling */
+#contact {
+  background-color: #111827; /* Dark background */
+  padding: 4rem 0;
+  color: #fff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #60a5fa; /* Blue color */
+}
+
+.section-header p {
+  color: #9ca3af;
+  font-size: 1.125rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/* Contact Grid Styling */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Card Styling */
+.contact-card {
+  background-color: #1f2937; /* Darker background for the card */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.contact-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+}
+
+/* Contact Title and Subtitle */
+.contact-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Contact Information Section */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Each Contact Item Styling */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #60a5fa;
+}
+
+/* Contact Details Styling */
+.contact-details {
+  flex: 1;
+}
+
+.contact-detail-title {
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.contact-detail-value {
+  color: #9ca3af;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Contact Owner Section */
+.contact-owner {
+  padding-top: 1rem;
+  border-top: 1px solid #374151;
+  margin-top: 1rem;
+}
+
+.contact-owner h4 {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.contact-owner p {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .contact-info {
+    gap: 1rem;
+  }
+
+  .contact-title {
+    font-size: 1.125rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
