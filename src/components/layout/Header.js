@@ -8,7 +8,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);  
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -19,12 +19,12 @@ const Header = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);  
+      setIsMobileMenuOpen(false);
     }
   };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);  
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -39,44 +39,86 @@ const Header = () => {
           </div>
 
           <nav className="nav md-flex">
-            <button onClick={() => scrollToSection("services")} className="nav-link">
+            <button
+              onClick={() => scrollToSection("services")}
+              className="nav-link"
+            >
               Services
             </button>
-            <button onClick={() => scrollToSection("pricing")} className="nav-link">
+            <button
+              onClick={() => scrollToSection("pricing")}
+              className="nav-link"
+            >
               Pricing
             </button>
-            <button onClick={() => scrollToSection("investment")} className="nav-link">
+            <button
+              onClick={() => scrollToSection("investment")}
+              className="nav-link"
+            >
               Investment
             </button>
-            <button onClick={() => scrollToSection("contact")} className="nav-link">
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="nav-link"
+            >
               Contact
             </button>
           </nav>
 
           <div className="header-actions">
-            <Button onClick={() => scrollToSection("contact")} className="sm-hidden">
+            <Button
+              onClick={() => scrollToSection("contact")}
+              className="sm-hidden"
+            >
               Get Quote
             </Button>
 
-            <button className="mobile-menu-btn md-hidden" onClick={toggleMobileMenu}>
-              {isMobileMenuOpen ? "✕" : "☰"}
-            </button>
+           <button
+  className="mobile-menu-btn md-hidden"
+  onClick={toggleMobileMenu}
+  aria-label="Toggle menu"
+>
+  <svg
+    width="28"
+    height="20"
+    viewBox="0 0 28 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`burger-icon ${isMobileMenuOpen ? 'open' : ''}`}
+  >
+    <rect className="line top" x="2" y="3" width="24" height="2" rx="1" />
+    <rect className="line middle" x="2" y="9" width="24" height="2" rx="1" />
+    <rect className="line bottom" x="6" y="15" width="18" height="2" rx="1" />
+  </svg>
+</button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
           <nav className="mobile-nav">
-            <button onClick={() => scrollToSection("services")} className="mobile-nav-link">
+            <button
+              onClick={() => scrollToSection("services")}
+              className="mobile-nav-link"
+            >
               Services
             </button>
-            <button onClick={() => scrollToSection("pricing")} className="mobile-nav-link">
+            <button
+              onClick={() => scrollToSection("pricing")}
+              className="mobile-nav-link"
+            >
               Pricing
             </button>
-            <button onClick={() => scrollToSection("investment")} className="mobile-nav-link">
+            <button
+              onClick={() => scrollToSection("investment")}
+              className="mobile-nav-link"
+            >
               Investment
             </button>
-            <button onClick={() => scrollToSection("contact")} className="mobile-nav-link">
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="mobile-nav-link"
+            >
               Contact
             </button>
             <Button onClick={() => scrollToSection("contact")} className="mt-4">

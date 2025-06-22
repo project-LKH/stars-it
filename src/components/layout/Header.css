@@ -141,3 +141,23 @@
     display: none; /* Hide desktop nav on small screens */
   }
 }
+/* Burger menu animation */
+.burger-icon .line {
+  fill: currentColor;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.burger-icon.open .top {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.burger-icon.open .middle {
+  opacity: 0;
+}
+
+.burger-icon.open .bottom {
+  transform: translateY(-6px) rotate(-45deg);
+  x: 2; /* reset x if needed */
+  width: 24px; /* match top bar */
+}
