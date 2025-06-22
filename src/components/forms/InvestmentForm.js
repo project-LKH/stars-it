@@ -4,6 +4,7 @@ import { useState } from "react"
 import Button from "../ui/Button"
 import "./InvestmentForm.css"
 
+
 const InvestmentForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({

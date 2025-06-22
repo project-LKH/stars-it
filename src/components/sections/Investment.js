@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import Card from "../ui/Card";
 import InvestmentForm from "../forms/InvestmentForm";
 import "./Investment.css";
+import investPageImage from "../../assets/invest.svg";
+
 
 const Investment = () => {
   const sectionRef = useRef(null);
@@ -13,9 +15,7 @@ const Investment = () => {
     "Scalable business model with recurring revenue",
   ];
 
-  useEffect(() => {
-     
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <section id="investment" className="section section-alt" ref={sectionRef}>
@@ -29,16 +29,29 @@ const Investment = () => {
             width="64"
             height="64"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+            />
           </svg>
           <h2>Investment Opportunities</h2>
-          <p>Join us in expanding Stars IT's reach and capabilities in the growing IT services market</p>
+          <p>
+            Join us in expanding Stars IT's reach and capabilities in the
+            growing IT services market
+          </p>
         </div>
 
         <div className="investment-grid">
           <Card className="investment-card">
             <h3 className="investment-title">
-              <svg className="users-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="users-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -48,10 +61,17 @@ const Investment = () => {
               </svg>
               Why Invest in Stars IT?
             </h3>
+            <div className="invest-image">
+              <img src={investPageImage} alt="IT illustration" />
+            </div>
             <ul className="benefits-list">
               {benefits.map((benefit, index) => (
                 <li key={index} className="benefit-item">
-                  <svg className="check-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="check-icon"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   {benefit}
@@ -62,7 +82,9 @@ const Investment = () => {
 
           <Card className="investment-card">
             <h3 className="investment-form-title">Investment Inquiry</h3>
-            <p className="investment-form-description">Get in touch to learn more about investment opportunities</p>
+            <p className="investment-form-description">
+              Get in touch to learn more about investment opportunities
+            </p>
             <InvestmentForm />
           </Card>
         </div>

@@ -4,15 +4,24 @@
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
   color: white;
   overflow: hidden;
   opacity: 0;
   transition: opacity 1s ease;
+     background: radial-gradient(
+  circle at center right,
+  rgba(255, 255, 255, 0.6) 0%,
+  rgba(145, 181, 243, 0.274) 20%,
+  #1e293b 50%
+);
 }
 
 .hero.fade-in {
   opacity: 1;
 }
+
+
 
 .hero-container {
   display: flex;
@@ -81,9 +90,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
+
   100% {
     transform: translateY(0);
   }

@@ -1,13 +1,16 @@
 /* Investment Section Styling */
 #investment {
   padding: 4rem 0;
-  background-color: #111827; /* Keeping the dark background */
+  background-color: #111827;
+  /* Keeping the dark background */
 }
 
 /* Trending Icon Animation */
 .trending-icon {
-  color: #60a5fa; /* Original blue */
-  transform: scale(1); /* Set scale to 1 for visibility */
+  color: #60a5fa;
+  /* Original blue */
+  transform: scale(1);
+  /* Set scale to 1 for visibility */
   transition: transform 0.5s ease-out;
 }
 
@@ -22,12 +25,15 @@
 
 /* Card Styling */
 .investment-card {
-  opacity: 1; /* Ensure the card is visible */
+  opacity: 1;
+  /* Ensure the card is visible */
   transition: opacity 0.5s ease-out;
-  background-color: #1f2937; /* Dark background for cards */
+  background-color: #1f2937;
+  /* Dark background for cards */
   padding: 2rem;
   border-radius: 0.5rem;
-  border: 1px solid #374151; /* Dark border */
+  border: 1px solid #374151;
+  /* Dark border */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -45,7 +51,8 @@
 .users-icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: #60a5fa; /* Blue for icon */
+  color: #60a5fa;
+  /* Blue for icon */
 }
 
 /* List of Benefits */
@@ -54,19 +61,34 @@
   padding: 0;
 }
 
+.invest-image {
+
+  max-width: 100%;
+  max-height: 20em;
+  /* background-color: #10b981; */
+}
+.invest-image>img {
+
+  max-width: 100%;
+  max-height: 20em;
+  /* background-color: #10b981; */
+}
+
 .benefit-item {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
-  color: #d1d5db; /* Light gray text */
+  color: #d1d5db;
+  /* Light gray text */
   line-height: 1.5;
 }
 
 .benefit-item .check-icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: #10b981; /* Green for check icon */
+  color: #10b981;
+  /* Green for check icon */
   margin-top: 0.125rem;
   flex-shrink: 0;
 }
@@ -80,6 +102,7 @@
 }
 
 .investment-form-description {
-  color: #9ca3af; /* Soft gray */
+  color: #9ca3af;
+  /* Soft gray */
   margin-bottom: 1.5rem;
 }
