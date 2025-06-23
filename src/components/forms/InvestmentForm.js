@@ -1,97 +1,86 @@
- 
-
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Button from "../ui/Button"
 import "./InvestmentForm.css"
 
-
 const InvestmentForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    investmentRange: "",
-    goals: "",
-  })
+  const [showSuccess, setShowSuccess] = useState(false)
+  const formRef = useRef(null)
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  const handleSubmit = () => {
+    // Show success notification after slight delay to let form post
+    setTimeout(() => {
+      setShowSuccess(true)
+      formRef.current.reset()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-     
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    alert("Thank you for your investment inquiry! We'll contact you soon to discuss opportunities.")
-
-     
-    setFormData({
-      name: "",
-      email: "",
-      investmentRange: "",
-      goals: "",
-    })
-    setIsSubmitting(false)
+      setTimeout(() => setShowSuccess(false), 4000)
+    }, 500)
   }
 
   return (
-    <form onSubmit={handleSubmit} className="investment-form">
-      <div className="form-group">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          className="form-input"
-          required
-        />
-      </div>
+    <div className="investment-form-wrapper">
+      {showSuccess && (
+        <div className="form-success-toast">
+          Thank you! We'll be in touch shortly.
+        </div>
+      )}
 
-      <div className="form-group">
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          value={formData.email}
-          onChange={handleChange}
-          className="form-input"
-          required
-        />
-      </div>
+      <form
+        ref={formRef}
+        action="https://formsubmit.co/chadley.starkey@gmail.com"
+        method="POST"
+        target="hidden_iframe"
+        onSubmit={handleSubmit}
+        className="investment-form"
+      >
+        {/* Prevent redirect */}
+        <input type="hidden" name="_captcha" value="false" />
 
-      <div className="form-group">
-        <input
-          type="text"
-          name="investmentRange"
-          placeholder="Investment Amount Range"
-          value={formData.investmentRange}
-          onChange={handleChange}
-          className="form-input"
-        />
-      </div>
+        <div className="form-group">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            className="form-input"
+            required
+          />
+        </div>
 
-      <div className="form-group">
-        <textarea
-          name="goals"
-          placeholder="Tell us about your investment goals..."
-          value={formData.goals}
-          onChange={handleChange}
-          className="form-textarea"
-          rows="4"
-        />
-      </div>
+        <div className="form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            className="form-input"
+            required
+          />
+        </div>
 
-      <Button type="submit" className="form-submit" disabled={isSubmitting}>
-        {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-      </Button>
-    </form>
+        <div className="form-group">
+          <input
+            type="text"
+            name="investmentRange"
+            placeholder="Investment Amount Range"
+            className="form-input"
+          />
+        </div>
+
+        <div className="form-group">
+          <textarea
+            name="goals"
+            placeholder="Tell us about your investment goals..."
+            className="form-textarea"
+            rows="4"
+          />
+        </div>
+
+        <Button type="submit" className="form-submit">
+          Submit Inquiry
+        </Button>
+      </form>
+
+      {/* Hidden iframe to capture the submission without page reload */}
+      <iframe title="submitButton" name="hidden_iframe" style={{ display: "none" }}></iframe>
+    </div>
   )
 }
 
