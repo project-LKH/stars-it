@@ -1,3 +1,4 @@
+/* Container & section styling */
 .services-section {
   background-color: rgba(17, 24, 39, 0.5);
   padding: 4rem 1rem;
@@ -28,58 +29,98 @@
   max-width: 30rem;
 }
 
-/* Scroll container */
+/* Scroll wrapper with hidden scrollbar */
 .scroll-carousel-wrapper {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
   position: relative;
 }
 
-/* Scrolling cards */
+/* Hide scrollbars on scroll wrapper and services scroll */
+.scroll-carousel-wrapper::-webkit-scrollbar,
+.services-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.scroll-carousel-wrapper,
+.services-scroll {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Gradient fade effect only on mobile */
+.scroll-carousel-wrapper::before,
+.scroll-carousel-wrapper::after {
+  content: none; /* disable by default */
+}
+
+@media (max-width: 767px) {
+  .scroll-carousel-wrapper::before,
+  .scroll-carousel-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 2rem;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .scroll-carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(17, 24, 39, 0.5), transparent);
+  }
+
+  .scroll-carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(17, 24, 39, 0.5), transparent);
+  }
+}
+
+/* Services scroll container */
 .services-scroll {
   display: flex;
   gap: 1rem;
-  width: max-content;
-  touch-action: pan-x;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: auto !important;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  scroll-snap-type: none;
 }
 
-/* Animate only on mobile */
-.animate-scroll {
-  animation: scrollLoop 25s linear infinite;
+/* Desktop layout: centered cards and wrap if needed */
+.desktop-centered {
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-x: visible;
 }
 
-.animate-scroll:hover,
-.animate-scroll:active {
-  animation-play-state: paused;
-}
-
-/* Keyframes for smooth infinite scroll */
-@keyframes scrollLoop {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
+/* Individual service card */
 .service-card {
   flex: 0 0 250px;
+  max-width: 250px;
   background: rgba(3, 7, 18, 0.8);
   border-radius: 0.75rem;
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s ease;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  user-select: none;
 }
 
+/* Hover effect on desktop */
 .service-card:hover {
   transform: translateY(-4px);
 }
 
+/* Icon container */
 .icon-circle {
   width: 3rem;
   height: 3rem;
-  border-radius: 999px;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,21 +128,29 @@
   background: #1f2937;
 }
 
+/* SVG icon size */
 .icon {
   width: 1.5rem;
   height: 1.5rem;
+  color: inherit;
 }
 
-/* Typography */
+/* Text styling and wrapping */
 .service-card h3 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .service-card p {
   font-size: 0.95rem;
   color: #9ca3af;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 /* Icon colors */
@@ -115,24 +164,4 @@
 
 .icon-circle.yellow .icon {
   color: #f59e0b;
-}
-
-/* Desktop: no animation, show full grid */
-@media (min-width: 768px) {
-  .services-scroll {
-    animation: none !important;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-sizing: border-box;
-    width: 100%;
-
-  }
-
-  .service-card {
-    flex: 0 0 calc(33.333% - 0.666rem);
-    /* accounts for 2 gaps between 3 cards */
-    max-width: calc(33.333% - 0.666rem);
-    margin-bottom: 2rem;
-    box-sizing: border-box;
-  }
 }
