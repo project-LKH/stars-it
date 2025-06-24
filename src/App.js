@@ -18,7 +18,7 @@ function App() {
           content="Reliable, smart IT support and solutions by Chadley Starkey."
         />
         <meta property="og:site_name" content="Stars IT" />
-<meta property="og:locale" content="en_ZA" />
+        <meta property="og:locale" content="en_ZA" />
 
         <meta
           name="keywords"
