@@ -103,6 +103,7 @@
   max-width: 250px;
   background: rgba(3, 7, 18, 0.8);
   border-radius: 0.75rem;
+  border: 1px solid rgba(109, 123, 184, 0.534);
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s ease;
