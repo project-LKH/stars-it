@@ -1,5 +1,5 @@
 #pricing {
-  min-height: 100vh; /* Ensure there's enough height */
+  min-height: 100vh; /* Ensure enough height */
   padding: 4rem 0;
 }
 
@@ -11,100 +11,134 @@
   margin: 0 auto;
 }
 
+/* Pricing card */
 .pricing-card {
-  opacity: 1; /* Ensure cards are visible initially */
-  background-color: #1f2937;
-  border: 1px solid #374151;
-  border-radius: 0.5rem;
-  padding: 2rem;
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #111827, #1f2937); /* subtle gradient */
+  border-radius: 0.75rem;
+  padding: 2rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* Ensure card fills the space */
-  animation: fadeIn 0.8s ease-in-out; /* Fade in animation */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  color: #f9fafb; /* light text */
+  animation: fadeIn 0.8s ease-in-out;
+  opacity: 1;
+  border: 1px solid #374151;
 }
 
-/* Add a hover effect */
 .pricing-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* Icon wrapper styles */
+/* Icon wrapper */
 .pricing-icon-wrapper {
-  margin: 0 auto 1rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background-color: rgba(255 255 255 / 0.1);
   display: flex;
+  align-items: center;
   justify-content: center;
+  color: inherit; /* inherit color for icon */
+  box-shadow: 0 0 8px rgba(255 255 255 / 0.15);
+  transition: background-color 0.3s ease;
+}
+/* Icon wrapper with base colors (always visible) */
+.pricing-icon-wrapper.blue {
+  background-color: rgba(59, 130, 246, 0.15); /* light blue background */
+  color: #3b82f6; /* blue icon color */
 }
 
-/* Icon styles */
+.pricing-icon-wrapper.green {
+  background-color: rgba(16, 185, 129, 0.15); /* light green background */
+  color: #10b981; /* green icon color */
+}
+
+/* On hover, make the glow stronger */
+.pricing-icon-wrapper.blue:hover {
+  background-color: rgba(59, 130, 246, 0.3); /* stronger blue glow */
+}
+
+.pricing-icon-wrapper.green:hover {
+  background-color: rgba(16, 185, 129, 0.3); /* stronger green glow */
+}
+
+/* Icon */
 .pricing-icon {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 2.5;
+  color: inherit;
 }
 
-/* Color styles based on plan color */
-.pricing-icon-wrapper.blue .pricing-icon {
-  color: #60a5fa;
-}
-
-.pricing-icon-wrapper.green .pricing-icon {
-  color: #10b981;
-}
-
-/* Title styles */
+/* Title */
 .pricing-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
   margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
 }
 
-/* Description styles */
-.pricing-description {
-  color: #9ca3af;
-  margin-bottom: 1rem;
-}
-
-/* Price styles */
+/* Price */
 .pricing-price {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #e0e7ff; /* softer white */
   margin: 0.5rem 0;
+  line-height: 1;
 }
 
-/* Period styles */
+/* Period */
 .pricing-period {
+  font-size: 1rem;
   color: #9ca3af;
+  text-align: center;
   margin-bottom: 1.5rem;
+  font-style: italic;
 }
 
-/* Features list styles */
+/* Description */
+.pricing-description {
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Features list */
 .pricing-features {
   list-style: none;
-  text-align: left;
-  margin-top: 1.5rem;
+  padding-left: 0;
+  margin-top: auto;
+  color: #d1d5db;
+  font-size: 1rem;
 }
 
-/* Feature item styles */
+/* Feature item */
 .pricing-feature {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
   color: #d1d5db;
 }
 
-/* Checkmark icon styles */
+/* Checkmark icon */
 .check-icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
   color: #10b981;
   flex-shrink: 0;
 }
 
-/* Simple fade-in animation */
+/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
